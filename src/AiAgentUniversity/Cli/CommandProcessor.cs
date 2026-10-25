@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+using System.Globalization;
 using AiAgentUniversity.Services;
 
 namespace AiAgentUniversity.Cli;
@@ -69,10 +69,10 @@ public class CommandProcessor
     {
         if (args.Count != 1) return CommandResult.Error("использование: expiring <дни>");
         if (!int.TryParse(args[0], out var days) || days < 0) return CommandResult.Error($"некорректное число дней: «{args[0]}».");
-        
+
         var items = _service.ExpiringWithin(days);
         if (items.Count == 0) return CommandResult.Ok($"В ближайшие {days} дн. ничего не истекает.");
-        
+
         var lines = new List<string> { $"Истекает в ближайшие {days} дн.:" };
         foreach (var p in items) lines.Add($"  #{p.Id} «{p.Name}» — {p.Quantity} {p.Unit} ({DescribeDays(p.DaysLeft())})");
         return CommandResult.Ok(lines.ToArray());
@@ -108,7 +108,7 @@ public class CommandProcessor
         return CommandResult.Ok(message);
     }
 
-    private static bool TryParseQuantity(string raw, out double value) => 
+    private static bool TryParseQuantity(string raw, out double value) =>
         double.TryParse(raw.Replace(',', '.'), NumberStyles.Float, CultureInfo.InvariantCulture, out value);
 
     private static string DescribeDays(int days) => days switch

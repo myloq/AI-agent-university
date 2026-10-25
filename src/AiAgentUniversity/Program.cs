@@ -1,4 +1,4 @@
-﻿using System.Text;
+using System.Text;
 using AiAgentUniversity.Cli;
 using AiAgentUniversity.Services;
 using AiAgentUniversity.Storage;
@@ -32,7 +32,7 @@ while (true)
 
     var command = CommandParser.Parse(line);
     var result = processor.Execute(command);
-    
+
     ui.PrintResult(result);
 
     if (result.ShouldExit)

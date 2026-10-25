@@ -1,4 +1,4 @@
-﻿using AiAgentUniversity.Models;
+using AiAgentUniversity.Models;
 using AiAgentUniversity.Storage;
 
 namespace AiAgentUniversity.Services;

@@ -1,4 +1,4 @@
-﻿namespace AiAgentUniversity.Cli;
+namespace AiAgentUniversity.Cli;
 
 public class ConsoleUI
 {

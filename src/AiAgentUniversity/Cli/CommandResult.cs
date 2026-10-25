@@ -1,4 +1,4 @@
-﻿namespace AiAgentUniversity.Cli;
+namespace AiAgentUniversity.Cli;
 
 public record CommandResult(bool ShouldExit, IReadOnlyList<string> Lines)
 {
