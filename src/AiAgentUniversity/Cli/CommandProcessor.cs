@@ -108,9 +108,13 @@ public class CommandProcessor
         return CommandResult.Ok(message);
     }
 
-    private static bool TryParseQuantity(string raw, out double value) =>
-        double.TryParse(raw.Replace(',', '.'), NumberStyles.Float, CultureInfo.InvariantCulture, out value);
+    private static bool TryParseQuantity(string raw, out double value)
+    {
+        var normalized = raw.Replace(',', '.');
 
+        return double.TryParse(normalized, NumberStyles.Float, CultureInfo.InvariantCulture, out value) &&
+               double.IsFinite(value);
+    }
     private static string DescribeDays(int days) => days switch
     {
         < 0 => "просрочено",
