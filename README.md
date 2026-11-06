@@ -57,18 +57,20 @@
 ## Подготовка окружения
 1. Установите **.NET SDK 10.0** (проверка: `dotnet --version`).
 2. Клонируйте репозиторий и перейдите в папку:
-   ```bash
+  ```bash
    git clone <url-репозитория>
-   cd AI-agent-university
+   cd AI-agent-university/src
+  ```
+
 Восстановите зависимости:
 
 > dotnet restore
 
 Запуск
 
-Из корня репозитория выполните:
+Находясь в дирректории AI-agent-university/src выполните:
 
-> dotnet run --project src/AiAgentUniversity
+> dotnet run --project AiAgentUniversity
 
 Штатное завершение: команда exit, quit или сочетание клавиш Ctrl+D (EOF).
 
@@ -90,7 +92,7 @@
 
 Проверки кода
 
-Форматтер (проверка стиля):
+Форматтер (проверка стиля)(находясь в дирректории AI-agent-university/src):
 
 > dotnet format --verify-no-changes
 

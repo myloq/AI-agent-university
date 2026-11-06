@@ -19,7 +19,7 @@ public class ProductService
 
     public IReadOnlyList<Product> All() => _products;
 
-    public Product Add(string name, double quantity, string unit, string category, DateTime expiry)
+    public Product Add(string name, decimal quantity, string unit, string category, DateTime expiry)
     {
         var product = new Product { Id = _nextId++, Name = name, Quantity = quantity, Unit = unit, Category = category, ExpiryDate = expiry };
         _products.Add(product);
@@ -32,7 +32,7 @@ public class ProductService
     public IReadOnlyList<Product> Search(string query) => _products.Where(p => p.Name.Contains(query, StringComparison.OrdinalIgnoreCase)).ToList();
     public Product? FindById(int id) => _products.FirstOrDefault(p => p.Id == id);
 
-    public bool Consume(int id, double amount, out string message)
+    public bool Consume(int id, decimal amount, out string message)
     {
         var product = FindById(id);
         if (product is null) { message = $"Продукт с id={id} не найден."; return false; }
@@ -40,7 +40,7 @@ public class ProductService
         if (amount > product.Quantity) { message = $"Нельзя списать {amount}, осталось {product.Quantity} {product.Unit}."; return false; }
 
         product.Quantity -= amount;
-        if (product.Quantity <= 0.0001)
+        if (product.Quantity <= 0)
         {
             _products.Remove(product);
             message = $"Продукт #{product.Id} «{product.Name}» полностью использован.";

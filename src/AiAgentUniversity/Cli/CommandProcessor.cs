@@ -108,12 +108,11 @@ public class CommandProcessor
         return CommandResult.Ok(message);
     }
 
-    private static bool TryParseQuantity(string raw, out double value)
+    private static bool TryParseQuantity(string raw, out decimal value)
     {
         var normalized = raw.Replace(',', '.');
 
-        return double.TryParse(normalized, NumberStyles.Float, CultureInfo.InvariantCulture, out value) &&
-               double.IsFinite(value);
+        return decimal.TryParse(normalized, NumberStyles.Number, CultureInfo.InvariantCulture, out value);
     }
     private static string DescribeDays(int days) => days switch
     {
