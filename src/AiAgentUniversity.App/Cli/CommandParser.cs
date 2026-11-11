@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace AiAgentUniversity.Cli;
+namespace AiAgentUniversity.App.Cli;
 
 public static class CommandParser
 {

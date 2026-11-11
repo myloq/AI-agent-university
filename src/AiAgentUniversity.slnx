@@ -1,3 +1,8 @@
 <Solution>
-    <Project Path="AiAgentUniversity/AiAgentUniversity.csproj" />
+    <Folder Name="/tests/">
+        <Project Path="tests/AiAgentUniversity.Tests/AiAgentUniversity.Tests.csproj" />
+    </Folder>
+    <Project Path="AiAgentUniversity.App/AiAgentUniversity.App.csproj" />
+    <Project Path="AiAgentUniversity.Data/AiAgentUniversity.Data.csproj" />
+    <Project Path="AiAgentUniversity.Domain/AiAgentUniversity.Domain.csproj" />
 </Solution>

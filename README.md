@@ -70,7 +70,7 @@
 
 Находясь в дирректории AI-agent-university/src выполните:
 
-> dotnet run --project AiAgentUniversity
+> dotnet run --project AiAgentUniversity.App
 
 Штатное завершение: команда exit, quit или сочетание клавиш Ctrl+D (EOF).
 

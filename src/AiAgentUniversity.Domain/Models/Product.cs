@@ -1,4 +1,4 @@
-namespace AiAgentUniversity.Models;
+namespace AiAgentUniversity.Domain.Models;
 
 public class Product
 {
