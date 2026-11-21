@@ -1,16 +1,15 @@
-using AiAgentUniversity.Models;
-using AiAgentUniversity.Storage;
+using AiAgentUniversity.Domain.Interfaces;
+using AiAgentUniversity.Domain.Models;
 
-namespace AiAgentUniversity.Services;
+namespace AiAgentUniversity.Domain.Services;
 
 public class ProductService
 {
-    private readonly JsonStorage _storage;
+    private readonly IStorage _storage;
     private readonly List<Product> _products;
     private int _nextId;
 
-    // Конструктор с 1 аргументом (JsonStorage)
-    public ProductService(JsonStorage storage)
+    public ProductService(IStorage storage)
     {
         _storage = storage;
         _products = _storage.Load();

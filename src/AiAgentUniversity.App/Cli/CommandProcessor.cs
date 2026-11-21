@@ -1,7 +1,7 @@
 using System.Globalization;
-using AiAgentUniversity.Services;
+using AiAgentUniversity.Domain.Services;
 
-namespace AiAgentUniversity.Cli;
+namespace AiAgentUniversity.App.Cli;
 
 public class CommandProcessor
 {
